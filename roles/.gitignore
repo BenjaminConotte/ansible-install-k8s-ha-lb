@@ -1,8 +1,9 @@
 # Ignore everything in roles dir
-/*
+!./install-ha-proxy/*
 # Except:
 # the .gitignore file
 !.gitignore
+
 # the requirements file
 !requirements.yml
 # Readme if you have one
