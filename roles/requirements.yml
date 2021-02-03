@@ -1,5 +1,6 @@
-collections:
+---
 - name: install-ha-proxy
   src: https://github.com/BenjaminConotte/ansible-install-k8s-lb-role.git
   type: git
   version: main
+...
