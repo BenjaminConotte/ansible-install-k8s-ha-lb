@@ -1,6 +1,6 @@
 ---
 - name: Install load-balancer for Kubernetes
-  hosts: k8s-lb
+  hosts: k8s-loadbalancers
   roles:
   - install-ha-proxy
 ...
