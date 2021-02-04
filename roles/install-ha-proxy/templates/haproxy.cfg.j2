@@ -48,6 +48,6 @@ backend b_kube_master
         stick-table type ip size 200k expire 30m
         source 0.0.0.0 usesrc clientip
         {% for master in groups['k8s-masters'] %}
-        server {{ master }}
+server {{ master }}
         {% endfor %}
         

@@ -15,7 +15,7 @@
   become: yes
   template:
     src: haproxy.cfg.j2
-    dest: /etc/haproxy
+    dest: /etc/haproxy/haproxy.cfg
   when: ansible_distribution == 'Ubuntu'
   notify:
   - Restart HA Proxy svc
