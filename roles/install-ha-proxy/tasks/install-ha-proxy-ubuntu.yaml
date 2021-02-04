@@ -13,7 +13,7 @@
 
 - name: debug inventory
   debug:
-    var: "{{ groups }}"
+    var: "{{ hostvars[inventory_hostname] }}"
 
 - name: Configure HA Proxy
   become: yes
