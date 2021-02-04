@@ -11,9 +11,9 @@
     state: present
   when: ansible_distribution == 'Ubuntu'
 
-  - name: debug inventory
-    debug:
-      var: "{{ groups }}"
+- name: debug inventory
+  debug:
+    var: "{{ groups }}"
 
 - name: Configure HA Proxy
   become: yes
