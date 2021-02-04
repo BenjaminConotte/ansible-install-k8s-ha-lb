@@ -23,8 +23,8 @@
   debug:
     var: groups['k8s-masters']
 
-# - name: Configure HA Proxy
-#   become: yes
-#   template:
-#     src: haproxy.cfg.j2
-#     dest: /etc/haproxy
+- name: Configure HA Proxy
+  become: yes
+  template:
+    src: haproxy.cfg.j2
+    dest: /etc/haproxy

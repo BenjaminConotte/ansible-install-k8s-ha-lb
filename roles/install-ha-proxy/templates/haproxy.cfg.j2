@@ -47,7 +47,7 @@ backend b_kube_master
         stick store-request src
         stick-table type ip size 200k expire 30m
         source 0.0.0.0 usesrc clientip
-        (%for host in {{ groups['k8s-masters'] }} %)
-        server {{ hostvars[host]['ansible_facts']['ansible_hostname'] }} {{ host }}
+        (%for k8s-master-ip in {{ groups['k8s-masters'] }} %)
+        server {{ k8s-master-ip }}
         (%endfor%)
         
