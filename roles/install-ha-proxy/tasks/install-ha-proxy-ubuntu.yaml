@@ -13,7 +13,7 @@
 
 - name: debug inventory
   debug:
-    var: "{{ hostvars[inventory_hostname] }}"
+    msg: "System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}"
 
 - name: Configure HA Proxy
   become: yes
