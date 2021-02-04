@@ -13,10 +13,11 @@
 
 - name: debug inventory
   debug:
-    msg: "System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}"
+    var: hostvars[inventory_hostname]
+    verbosity: 4
 
-- name: Configure HA Proxy
-  become: yes
-  template:
-    src: haproxy.cfg.j2
-    dest: /etc/haproxy
+# - name: Configure HA Proxy
+#   become: yes
+#   template:
+#     src: haproxy.cfg.j2
+#     dest: /etc/haproxy
