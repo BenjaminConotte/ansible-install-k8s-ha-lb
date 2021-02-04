@@ -10,7 +10,6 @@
     name: haproxy
     state: present
   when: ansible_distribution == 'Ubuntu'
-- name: debug variable
 
 - name: Configure HA Proxy on Ubuntu
   become: yes
