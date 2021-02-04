@@ -11,20 +11,11 @@
     state: present
   when: ansible_distribution == 'Ubuntu'
 
-- name: debug hostvars[inventory_hostname]
-  debug:
-    var: hostvars[inventory_hostname]
-
-- name: debug groups['k8s-loadbalancers']
-  debug:
-    var: groups['k8s-loadbalancers']
-
-- name: debug groups['k8s-masters']
-  debug:
-    var: groups['k8s-masters']
-
-- name: Configure HA Proxy
+- name: Configure HA Proxy on Ubuntu
   become: yes
   template:
     src: haproxy.cfg.j2
     dest: /etc/haproxy
+  when: ansible_distribution == 'Ubuntu'
+  notify:
+  - Restart HA Proxy service
