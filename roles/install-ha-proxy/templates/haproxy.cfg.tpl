@@ -37,10 +37,17 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
 
 frontend f_kube_master
-        bind 
-        option
+        bind :6443 transparent
+        mode tcp
         default_backend b_kube_master
 
 backend b_kube_master
-        option
+        mode tcp
+        balance leastconn
+        stick store-request src
+        stick-table type ip size 200k expire 30m
+        source 0.0.0.0 usesrc clientip
+        (%for master in {{ groups['k8s-masters'] }} %)
+        server {{ hostvars[master]['ansible_facts']['ansible_hostname'] }} {{ master }}
+        (%endfor%)
         
