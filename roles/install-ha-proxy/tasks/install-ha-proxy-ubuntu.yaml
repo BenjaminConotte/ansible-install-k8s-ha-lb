@@ -18,4 +18,4 @@
     dest: /etc/haproxy
   when: ansible_distribution == 'Ubuntu'
   notify:
-  - Restart HA Proxy service
+  - Restart HA Proxy svc
