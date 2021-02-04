@@ -10,7 +10,9 @@
     name: haproxy
     state: present
   when: ansible_distribution == 'Ubuntu'
-
+- name: debug variable
+  debug:
+    var: hostvars['192.168.96.10']
 - name: Configure HA Proxy on Ubuntu
   become: yes
   template:
