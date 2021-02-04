@@ -10,11 +10,11 @@
     name: haproxy
     state: present
   when: ansible_distribution == 'Ubuntu'
-- name: debug inventory
-  debug:
-    msg: "{{ item }}"
-  with_inventory_hostnames:
-    - all
+
+  - name: debug inventory
+    debug:
+      var: "{{ groups }}"
+
 - name: Configure HA Proxy
   become: yes
   template:
