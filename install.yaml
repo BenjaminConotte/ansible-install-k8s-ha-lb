@@ -6,5 +6,6 @@
   
 - name: Install keepalived for kubernetes
   hosts: k8s-loadbalancers
+  roles:
   - install-keepalived
 ...
