@@ -3,5 +3,8 @@
   hosts: k8s-loadbalancers
   roles:
   - install-ha-proxy
+  
+- name: Install keepalived for kubernetes
+  hosts: k8s-loadbalancers
   - install-keepalived
 ...

@@ -12,6 +12,7 @@
   when: ansible_distribution == 'Ubuntu'
 
 - name: Enable keepalived service
+  become: yes
   service:
     name: keepalived
     enabled: yes
