@@ -1,0 +1,17 @@
+- name: Update repositories on Ubuntu
+  become: yes
+  apt:
+    update_cache: yes
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Install keepalived on Ubuntu
+  become: yes
+  apt:
+    name: keepalived
+    state: present
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Enable keepalived service
+  service:
+    name: keepalived
+    enabled: yes

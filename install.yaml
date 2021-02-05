@@ -3,4 +3,5 @@
   hosts: k8s-loadbalancers
   roles:
   - install-ha-proxy
+  - install-keepalived
 ...

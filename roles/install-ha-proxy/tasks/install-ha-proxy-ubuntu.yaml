@@ -11,6 +11,11 @@
     state: present
   when: ansible_distribution == 'Ubuntu'
 
+- name: Enable haproxy service
+  service:
+    name: haproxy
+    enabled: yes
+
 - name: Configure HA Proxy on Ubuntu
   become: yes
   template:
