@@ -1,5 +1,5 @@
 global_defs { 
-  router_id {{ hostvars[ansible_nodename] }} 
+  router_id {{ ansible_nodename }} 
 }
 
 vrrp_instance vrrp_k8s_master {
@@ -8,4 +8,5 @@ vrrp_instance vrrp_k8s_master {
    priority {{ keepalived_priority }}
 
    virtual_ipadresse {
+   }
 }
