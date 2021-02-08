@@ -19,7 +19,11 @@
 
 - name: Debug configuration of keepalived
   debug:
-    var: ansible_facts["eth0"]["ipv4"]["address"].split('.')[-1][-2:]
+    var: eth0.ipv4.address
+
+- name: Debug configuration of keepalived
+  debug:
+    var: eth0.ipv4.address.split('.')[-1][-2:]
 
 - name: Configure keepalived on ubuntu
   notify: Restart keepalived svc
