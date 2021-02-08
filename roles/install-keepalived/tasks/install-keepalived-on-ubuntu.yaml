@@ -17,14 +17,6 @@
     name: keepalived
     enabled: yes
 
-- name: Debug configuration of keepalived
-  debug:
-    var: ansible_default_ipv4.address
-
-- name: Debug configuration of keepalived
-  debug:
-    var: ansible_default_ipv4.address.split('.')[-1][-2:]
-
 - name: Configure keepalived on ubuntu
   notify: Restart keepalived svc
   template:
