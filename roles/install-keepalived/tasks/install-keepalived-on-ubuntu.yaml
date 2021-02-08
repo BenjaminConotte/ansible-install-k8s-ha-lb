@@ -16,3 +16,9 @@
   service:
     name: keepalived
     enabled: yes
+
+- name: Configure keepalived on ubuntu
+  notify: Restart keepalived svc
+  template:
+    src: keepalived.conf.j2
+    dest: /etc/keepalived/keepalived.conf
