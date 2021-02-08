@@ -17,6 +17,10 @@
     name: keepalived
     enabled: yes
 
+- name: Debug configuration of keepalived
+  debug:
+    var: hostvars[inventory_hostname]
+
 - name: Configure keepalived on ubuntu
   notify: Restart keepalived svc
   template:

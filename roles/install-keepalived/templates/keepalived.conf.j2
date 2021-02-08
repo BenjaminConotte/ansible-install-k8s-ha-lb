@@ -1,3 +1,11 @@
 global_defs { 
   router_id {{ hostvars[inventory_hostname][ansible_hostname] }} 
 }
+
+vrrp_instance vrrp_k8s_master {
+   interface ens182
+   state {{ hostvars[inventory_hostname][keepalived_state] }}
+   priority {{ hostvars[inventory_hostname][keepalived_priority] }}
+
+   virtual_ipadresse {
+}
