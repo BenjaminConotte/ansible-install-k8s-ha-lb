@@ -1,4 +1,14 @@
 ---
+- name: install-ha-proxy
+  src: https://github.com/BenjaminConotte/install-ha-proxy.git
+  type: git
+  version: main
+
+- name: install-keepalived
+  src: https://github.com/BenjaminConotte/install-keepalived.git
+  type: git
+  version: main
+  
 roles:
 - name: install-ha-proxy
   src: https://github.com/BenjaminConotte/install-ha-proxy.git
