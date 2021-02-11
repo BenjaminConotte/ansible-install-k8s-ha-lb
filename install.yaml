@@ -4,7 +4,7 @@
   tasks:
   - name: Download dependencies
     local_action:
-     command ansible-galaxy -r requirements.yml  --roles-path roles
+     command ansible-galaxy install -r requirements.yml  --roles-path roles
   
   - name: Install load-balancer for Kubernetes
     include_role:
