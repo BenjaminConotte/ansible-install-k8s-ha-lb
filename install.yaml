@@ -5,12 +5,12 @@
   - name: Download dependencies
     local_action:
      command ansible-galaxy -r requirements.yml  --roles-path roles
-
+  
   - name: Install load-balancer for Kubernetes
-    import_role:
+    include_role:
       name: install-ha-proxy
   
   - name: Install keepalived for kubernetes
-    import_role:
+    include_role:
       name: install-keepalived
 ...
