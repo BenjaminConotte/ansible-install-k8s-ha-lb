@@ -1,11 +1,19 @@
 ---
-- name: Install load-balancer for Kubernetes
+
+- name: Install high availability load-balancers solution for Kubernetes'master
   hosts: k8s-loadbalancers
-  roles:
-  - install-ha-proxy
+  tasks:
+  - name: Download dependencies
+    local_action:
+     command ansible-galaxy -r requirements.yml  --roles-path roles
+
+  - name: Install load-balancer for Kubernetes
+    hosts: k8s-loadbalancers
+    roles:
+    - install-ha-proxy
   
-- name: Install keepalived for kubernetes
-  hosts: k8s-loadbalancers
-  roles:
-  - install-keepalived
+  - name: Install keepalived for kubernetes
+    hosts: k8s-loadbalancers
+    roles:
+    - install-keepalived
 ...
